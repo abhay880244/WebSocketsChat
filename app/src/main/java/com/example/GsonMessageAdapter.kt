@@ -5,11 +5,11 @@ import com.google.gson.TypeAdapter
 import com.google.gson.reflect.TypeToken
 import com.tinder.scarlet.Message
 import com.tinder.scarlet.MessageAdapter
-import okhttp3.internal.Util.UTF_8
 import okio.Buffer
 import java.io.OutputStreamWriter
 import java.io.StringReader
 import java.lang.reflect.Type
+import kotlin.text.Charsets.UTF_8
 
 class GsonMessageAdapter<T> private constructor(
     private val gson: Gson,

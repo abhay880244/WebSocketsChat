@@ -20,29 +20,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeData() {
         // Observe the WebSocket connection
-        disposables.plusAssign(ChatApplication.socket.observeWebSocketEvent()
-            .subscribe({
-                // If connection is open
-                if (it is WebSocket.Event.OnConnectionOpened<*>) {
-
-                }
-            }, { error ->
-                Log.d(TAG, "Error while observing socket ${error.cause}")
-            }))
-
-// Observe the ticker channel
-        disposables.plusAssign(ChatApplication.socket.observeMessage()
-            .subscribe({
-                Log.d(TAG, "test ${it.message}")
-            }, { error ->
-                Log.d(TAG, "Error while observing  ${error.cause}")
-            }))
+//        disposables.plusAssign(ChatApplication.socket.observeWebSocketEvent()
+//            .subscribe({
+//                // If connection is open
+//                if (it is WebSocket.Event.OnConnectionOpened<*>) {
+//
+//                }
+//            }, { error ->
+//                Log.d(TAG, "Error while observing socket ${error.cause}")
+//            }))
+//
+//// Observe the ticker channel
+//        disposables.plusAssign(ChatApplication.socket.observeMessage()
+//            .subscribe({
+//                Log.d(TAG, "test ${it.message}")
+//            }, { error ->
+//                Log.d(TAG, "Error while observing  ${error.cause}")
+//            }))
     }
 
-    fun sendMessage(){
-        // Initialise parameters
-        val messageData = MessageData("khfgxhchjgffg")
 
-        ChatApplication.socket.sendMessage(messageData)
-    }
 }
